@@ -21,7 +21,8 @@ export default createGlobalStyle`
   *, button, input{
     border: 0;
     background: 0;
-    font-family: var(--lato)
+    font-family: var(--lato);
+    outline: 0;
   }
   
   button:focus {

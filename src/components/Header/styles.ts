@@ -13,7 +13,7 @@ export const Container = styled.header`
   align-items: center;
 
   width: 100%;
-  height: 90px;
+  height: 84px;
   
   background-color: ${props => props.theme.colors.backgroundSecondary};
   border-bottom: 1px solid #BDBDBD;

@@ -12,6 +12,12 @@ export default {
         text: '#333333',
         textSecondary: '#6D6D6D',
         textTertiary: '#CECECE',
+
+        error: '#C90528',
+
+        placeholder: '#828282',
+
+        border: '#BDBDBD',
     },
 
 }

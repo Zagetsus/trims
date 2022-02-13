@@ -16,6 +16,12 @@ declare module 'styled-components' {
             text: string;
             textSecondary: string,
             textTertiary: string,
+
+            placeholder: string,
+
+            error: string,
+
+            border: string,
         },
     }
 }
