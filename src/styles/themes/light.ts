@@ -9,6 +9,8 @@ export default {
         background: '#FFFFFF',
         backgroundSecondary: '#FFFFFF',
 
+        white: '#FFFFFF',
+
         text: '#333333',
         textSecondary: '#6D6D6D',
         textTertiary: '#CECECE',
@@ -17,6 +19,7 @@ export default {
 
         placeholder: '#828282',
 
+        card: '#F2F2F2',
         border: '#BDBDBD',
     },
 

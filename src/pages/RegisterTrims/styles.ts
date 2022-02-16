@@ -5,13 +5,16 @@ interface IColumn {
 }
 
 export const Container = styled.section`
-  margin: 40px 0 94px;
+  padding: 40px 0 94px;
 `;
 
 export const Content = styled.section`
-  display: flex;
   max-width: var(--container);
   margin: 0 auto 80px;
+`;
+
+export const ContentRow = styled.section`
+  display: flex;
 `;
 
 export const Title = styled.h1`
@@ -40,7 +43,7 @@ export const Second = styled(First)`
 `
 
 export const Form = styled.form`
-  margin-top: 40px;
+  margin: 40px 0 80px;
 `;
 
 export const FormRow = styled.div`
@@ -59,4 +62,24 @@ export const SectionTitle = styled.h3`
   line-height: 29px;
   color: ${props => props.theme.colors.primary};
   margin-bottom: 24px;
+`;
+
+export const ColorsButton = styled.div`
+  max-width: 318px;
+`;
+
+export const ButtonRows = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  
+  > button {
+    max-width: 200px;
+    
+    &:first-child {
+      margin-right: 16px;
+    }
+  }
 `;

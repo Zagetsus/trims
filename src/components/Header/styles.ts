@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {ReactComponent as LogoSVG} from "../../assets/svg/logo.svg";
 
 interface IAlign {
     align: 'flex-start' | 'center' | 'flex-end'
@@ -34,9 +35,5 @@ export const HeaderColumn = styled.div<IAlign>`
   justify-content: ${({align}) => align};
 `;
 
-export const Title = styled.h1`
-  font-weight: bold;
-  font-size: 28px;
-  line-height: 34px;
-  color: ${props => props.theme.colors.primary};
+export const Logo = styled(LogoSVG)`
 `;

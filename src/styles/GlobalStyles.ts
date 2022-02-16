@@ -11,7 +11,7 @@ export default createGlobalStyle`
   html, body, #root {
     background-color: ${props => props.theme.colors.background};
     min-height: 100vh;
-    min-width: 100vw;
+    max-width: 100vw;
 
     width: 100%;
     height: 100%;

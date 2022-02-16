@@ -13,6 +13,8 @@ declare module 'styled-components' {
             background: string;
             backgroundSecondary: string;
 
+            white: string;
+
             text: string;
             textSecondary: string,
             textTertiary: string,
@@ -21,6 +23,7 @@ declare module 'styled-components' {
 
             error: string,
 
+            card: string;
             border: string,
         },
     }

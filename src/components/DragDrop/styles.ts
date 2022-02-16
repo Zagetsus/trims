@@ -11,7 +11,9 @@ export const Container = styled.div`
   width: 308px;
   height: 295px;
   border-radius: 8px;
+  background-color: ${props => props.theme.colors.card};
   border: 3px dashed ${props => props.theme.colors.tertiary};
+  cursor: pointer;
 `;
 
 export const Icon = styled(SVGIcon)`

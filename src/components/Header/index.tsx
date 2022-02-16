@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import ReactSwitch from "react-switch";
 import {ThemeContext} from "styled-components";
-import {Container, Content, HeaderColumn, Title} from "./styles";
+import {Container, Content, HeaderColumn, Logo} from "./styles";
 
 interface Props {
     toggleTheme(): void;
@@ -14,7 +14,7 @@ const Header: React.FC<Props> = ({toggleTheme}) => {
             <Content>
                 <HeaderColumn align={'flex-start'}/>
                 <HeaderColumn align={'center'}>
-                    <Title>Aviamentos</Title>
+                    <Logo />
                 </HeaderColumn>
                 <HeaderColumn align={'flex-end'}>
                     <ReactSwitch
