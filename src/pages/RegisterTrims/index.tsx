@@ -8,7 +8,7 @@ import {
     Form,
     FormColumn,
     FormRow,
-    Second,
+    Second, Section,
     SectionTitle,
     Subtitle,
     Title
@@ -23,21 +23,23 @@ import AddVariantsModal from "../../components/AddVariantsModal";
 import Select from "../../components/Select";
 
 const RegisterTrims: React.FC = () => {
+    const [addColorsModal, setAddColorsModal] = useState(false);
+
     const options = [
-        { name: 'Opção 1', value: 1, color: '#000000' },
-        { name: 'Opção 2', value: 2, color: '#00FF00' },
-        { name: 'Opção 3', value: 3, color: '#0000FF' },
-        { name: 'Opção 5', value: 4, color: '#FF0000' },
-        { name: 'Opção 6', value: 4, color: '#FF0000' },
-        { name: 'Opção 7', value: 4, color: '#FF0000' },
-        { name: 'Opção 8', value: 4, color: '#FF0000' },
-        { name: 'Opção 9', value: 4, color: '#FF0000' },
-        { name: 'Opção 10', value: 4, color: '#FF0000' },
-        { name: 'Opção 11', value: 4, color: '#FF0000' },
-        { name: 'Opção 12', value: 4, color: '#FF0000' },
+        {name: 'Opção 1', value: 1, color: '#000000'},
+        {name: 'Opção 2', value: 2, color: '#00FF00'},
+        {name: 'Opção 3', value: 3, color: '#0000FF'},
+        {name: 'Opção 5', value: 4, color: '#FF0000'},
+        {name: 'Opção 6', value: 4, color: '#FF0000'},
+        {name: 'Opção 7', value: 4, color: '#FF0000'},
+        {name: 'Opção 8', value: 4, color: '#FF0000'},
+        {name: 'Opção 9', value: 4, color: '#FF0000'},
+        {name: 'Opção 10', value: 4, color: '#FF0000'},
+        {name: 'Opção 11', value: 4, color: '#FF0000'},
+        {name: 'Opção 12', value: 4, color: '#FF0000'},
     ]
 
-    const [open, setOpen] = useState(true);
+
     return (
         <Container>
             <Content>
@@ -63,13 +65,16 @@ const RegisterTrims: React.FC = () => {
 
                             <FormRow>
                                 <FormColumn size={'md'}>
-                                    <Select title={'Tipo de Aviamento'} type={'text'} options={options} onChange={(item) => console.log(item)}/>
+                                    <Select title={'Tipo de Aviamento'} type={'text'} options={options}
+                                            onChange={(item) => console.log(item)}/>
                                 </FormColumn>
                                 <FormColumn size={'md'}>
-                                    <Select title={'Categoria'} type={'text'} options={options} onChange={(item) => console.log(item)}/>
+                                    <Select title={'Categoria'} type={'text'} options={options}
+                                            onChange={(item) => console.log(item)}/>
                                 </FormColumn>
                                 <FormColumn size={'md'}>
-                                    <Select title={'Subcategoria'} type={'text'} options={options} onChange={(item) => console.log(item)}/>
+                                    <Select title={'Subcategoria'} type={'text'} options={options}
+                                            onChange={(item) => console.log(item)}/>
                                 </FormColumn>
                             </FormRow>
 
@@ -99,37 +104,41 @@ const RegisterTrims: React.FC = () => {
 
                             <FormRow>
                                 <FormColumn size={'sm'}>
-                                    <Select title={'Categoria'} type={'text'} options={options} onChange={(item) => console.log(item)}/>
+                                    <Select title={'Unidade de medida'} options={options}
+                                            onChange={(item) => console.log(item)}/>
                                 </FormColumn>
                                 <FormColumn size={'sm'}>
-                                    <Input placeholder={'Preço em KG'} title={'Peso'}/>
+                                    <Input title={'Quantidade por embalagem'}/>
                                 </FormColumn>
                                 <FormColumn size={'sm'}>
                                     <Button outline expand>Configurar embalagem</Button>
                                 </FormColumn>
                             </FormRow>
 
-                            <div>
-                                <SectionTitle>Cores</SectionTitle>
-                                <ColorsButton>
-                                    <Button iconRight={<IconRight />} expand>Adicionar cores</Button>
-                                </ColorsButton>
-                            </div>
                         </Form>
                     </First>
                     <Second>
-                        <SectionTitle>Foto principal</SectionTitle>
-                        <DragDrop/>
+                        <Section>
+                            <SectionTitle>Foto principal</SectionTitle>
+                            <DragDrop/>
+                        </Section>
+
+                        <Section>
+                            <SectionTitle>Cores</SectionTitle>
+                            <ColorsButton>
+                                <Button onClick={() => setAddColorsModal(true)} iconRight={<IconRight/>} expand>Adicionar cores</Button>
+                            </ColorsButton>
+                        </Section>
                     </Second>
                 </ContentRow>
 
                 <ButtonRows>
-                    <Button iconLeft={<IconLeft />} iconRight={<IconRight />} outline expand>Salvar rascunho</Button>
-                    <Button iconRight={<IconRight />} expand>Salvar produto</Button>
+                    <Button iconLeft={<IconLeft/>} iconRight={<IconRight/>} outline expand>Salvar rascunho</Button>
+                    <Button iconRight={<IconRight/>} expand>Salvar produto</Button>
                 </ButtonRows>
             </Content>
 
-            <AddVariantsModal open={open} setOpen={setOpen} />
+            <AddVariantsModal open={addColorsModal} setOpen={setAddColorsModal}/>
         </Container>
     );
 };

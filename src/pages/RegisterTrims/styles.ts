@@ -64,7 +64,12 @@ export const FormColumn = styled.div<IColumn>`
   }
 `;
 
-export const SectionTitle = styled.h3`
+export const Section = styled.div`
+  margin-bottom: 32px;
+`;
+
+
+export const SectionTitle = styled.h2`
   font-size: 24px;
   line-height: 29px;
   color: ${props => props.theme.colors.primary};

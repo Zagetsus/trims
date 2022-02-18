@@ -17,10 +17,10 @@ export const Title = styled.p`
 `;
 
 export const Color = styled.div<{ color: string }>`
-  width: 24px;
-  height: 24px;
+  min-width: 16px;
+  height: 16px;
   margin-left: 16px;
-  border-radius: 100%;
+  border-radius: 2px;
   border: 0.6px solid var(--grey-light-2);
   box-sizing: border-box;
   background: ${({color}) => color};
@@ -89,7 +89,7 @@ export const DropDownContainer = styled.div<{ $open: boolean, $position: string 
   width: 100%;
   max-height: 288px;
   overflow: auto;
-  background: #f4f4f4;
+  background: ${props => props.theme.colors.card};
   border-radius: 8px;
   transition: 200ms all ease-in;
   z-index: 800;
@@ -99,12 +99,11 @@ export const DropDownContainer = styled.div<{ $open: boolean, $position: string 
 
 export const DropDownItem = styled.div`
   display: flex;
-  font-family: var(--roboto);
   font-size: 16px;
   line-height: 140%;
   letter-spacing: 0.2px;
   padding: 13px 0;
-  color: var(--grey);
+  color: ${props => props.theme.colors.text};
   cursor: pointer;
   align-items: center;
   width: 100%;
