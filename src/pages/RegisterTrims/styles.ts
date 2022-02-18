@@ -42,19 +42,26 @@ export const Second = styled(First)`
   margin-right: 0;
 `
 
-export const Form = styled.form`
+export const Form = styled.div`
   margin: 40px 0 80px;
 `;
 
 export const FormRow = styled.div`
   display: flex;
-  justify-content: space-between;
 
   margin-bottom: 32px;
 `;
 
 export const FormColumn = styled.div<IColumn>`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
   width: ${({size}) => size === 'sm' ? '200px' : size === 'md' ? '307px' : '416px'};
+  
+  &:not(:last-child){
+    margin-right: 16px;
+  }
 `;
 
 export const SectionTitle = styled.h3`

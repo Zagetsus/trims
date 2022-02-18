@@ -319,7 +319,6 @@ function validateNumber(value: string) {
   return validation;
 }
 
-
 export const validationTypes: Type = {
   cnpj: (value: string) => validateCNPJ(value),
   cpf: (value: string) => validateCPF(value),

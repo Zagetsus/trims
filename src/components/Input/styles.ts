@@ -9,7 +9,7 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.p`
-  margin-bottom: 2px;
+  margin-bottom: 8px;
   font-size: 16px;
   line-height: 19px;
   color: ${props => props.theme.colors.textSecondary};

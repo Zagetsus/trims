@@ -6,19 +6,18 @@ interface Props {
 }
 
 export const Container = styled.button<Props>`
-  display: flex;
+  display: flex;\
   align-items: center;
   justify-content: center;
 
   width: ${({expand}) => expand ? '100%' : 'auto'};
-
-  padding: 12px 16px;
+  height: 48px;
+  
   border-radius: 8px;
   background-color: ${({outline, theme}) => outline ? 'transparent' : theme.colors.primary};
   border: 2px solid ${({theme}) => theme.colors.primary};
 
   font-weight: bold;
-  font-size: 16px;
   line-height: 24px;
   color: ${({outline, theme}) => outline ? theme.colors.primary : theme.colors.white};
 
@@ -30,6 +29,10 @@ export const Container = styled.button<Props>`
         fill: ${({outline, theme}) => outline ? theme.colors.primary : theme.colors.white};
       }
     }
+  }
+  
+  &:hover {
+    opacity: 0.8;
   }
 `;
 

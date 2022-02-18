@@ -19,9 +19,24 @@ import Button from "../../components/Button";
 
 import {ReactComponent as IconRight} from "../../assets/svg/icons/icon-arrow-right.svg";
 import {ReactComponent as IconLeft} from "../../assets/svg/icons/icon-cloud.svg";
-import Modal from "../../components/Modal";
+import AddVariantsModal from "../../components/AddVariantsModal";
+import Select from "../../components/Select";
 
 const RegisterTrims: React.FC = () => {
+    const options = [
+        { name: 'Opção 1', value: 1, color: '#000000' },
+        { name: 'Opção 2', value: 2, color: '#00FF00' },
+        { name: 'Opção 3', value: 3, color: '#0000FF' },
+        { name: 'Opção 5', value: 4, color: '#FF0000' },
+        { name: 'Opção 6', value: 4, color: '#FF0000' },
+        { name: 'Opção 7', value: 4, color: '#FF0000' },
+        { name: 'Opção 8', value: 4, color: '#FF0000' },
+        { name: 'Opção 9', value: 4, color: '#FF0000' },
+        { name: 'Opção 10', value: 4, color: '#FF0000' },
+        { name: 'Opção 11', value: 4, color: '#FF0000' },
+        { name: 'Opção 12', value: 4, color: '#FF0000' },
+    ]
+
     const [open, setOpen] = useState(true);
     return (
         <Container>
@@ -48,13 +63,13 @@ const RegisterTrims: React.FC = () => {
 
                             <FormRow>
                                 <FormColumn size={'md'}>
-                                    <Input placeholder={'Selecione'} title={'Tipo de Aviamento'}/>
+                                    <Select title={'Tipo de Aviamento'} type={'text'} options={options} onChange={(item) => console.log(item)}/>
                                 </FormColumn>
                                 <FormColumn size={'md'}>
-                                    <Input placeholder={'Selecione'} error title={'Categoria'}/>
+                                    <Select title={'Categoria'} type={'text'} options={options} onChange={(item) => console.log(item)}/>
                                 </FormColumn>
                                 <FormColumn size={'md'}>
-                                    <Input placeholder={'Selecione'} title={'Subcategoria'}/>
+                                    <Select title={'Subcategoria'} type={'text'} options={options} onChange={(item) => console.log(item)}/>
                                 </FormColumn>
                             </FormRow>
 
@@ -84,7 +99,13 @@ const RegisterTrims: React.FC = () => {
 
                             <FormRow>
                                 <FormColumn size={'sm'}>
-                                    <Input placeholder={'Selecione'} title={'Unidade de medida'}/>
+                                    <Select title={'Categoria'} type={'text'} options={options} onChange={(item) => console.log(item)}/>
+                                </FormColumn>
+                                <FormColumn size={'sm'}>
+                                    <Input placeholder={'Preço em KG'} title={'Peso'}/>
+                                </FormColumn>
+                                <FormColumn size={'sm'}>
+                                    <Button outline expand>Configurar embalagem</Button>
                                 </FormColumn>
                             </FormRow>
 
@@ -108,7 +129,7 @@ const RegisterTrims: React.FC = () => {
                 </ButtonRows>
             </Content>
 
-            <Modal open={open} onClose={() => setOpen(false)} />
+            <AddVariantsModal open={open} setOpen={setOpen} />
         </Container>
     );
 };
